@@ -41,29 +41,37 @@ async function getDetails() {
     dateTime.innerText = currentTime
 
     // List of the Post Offices
-    const post = await fetch(`https://api.postalpincode.in/pincode/440024`)
-    const list = await post.json()
-    console.log(list[0].PostOffice)
-    message.innerText = list[0].Message
-    // console.log(post)
-    list[0].PostOffice.forEach(element => {
-        const newElement = document.createElement('div')
-        const newElementHtml =`<h4 class="text-white-50">Name: <span class="ipDetails">${element.Name}</span></h4>
-        <h4 class="text-white-50">Branch Type: <span class="ipDetails">${element.BranchType}</span></h4>
-        <h4 class="text-white-50">Delivery Status: <span class="ipDetails">${element.DeliveryStatus}</span></h4>
-        <h4 class="text-white-50">District: <span class="ipDetails">${element.District}</span></h4>
-        <h4 class="text-white-50">Division: <span class="ipDetails">${element.Division}</span></h4>`
-    //     const newCard = `<div class="col bg-purple p-4 text-start">
+
+    try {
+        const post = await fetch(`https://api.postalpincode.in/pincode/440024`)
+        const list = await post.json()
+        console.log(list[0].PostOffice)
+        message.innerText = list[0].Message
+        // console.log(post)
+        list[0].PostOffice.forEach(element => {
+            const newElement = document.createElement('div')
+            const newElementHtml =`<h4 class="text-white-50">Name: <span class="ipDetails">${element.Name}</span></h4>
+            <h4 class="text-white-50">Branch Type: <span class="ipDetails">${element.BranchType}</span></h4>
+            <h4 class="text-white-50">Delivery Status: <span class="ipDetails">${element.DeliveryStatus}</span></h4>
+            <h4 class="text-white-50">District: <span class="ipDetails">${element.District}</span></h4>
+            <h4 class="text-white-50">Division: <span class="ipDetails">${element.Division}</span></h4>`
+        //     const newCard = `<div class="col bg-purple p-4 text-start">
+        
+        // </div>`
+            newElement.innerHTML = newElementHtml
+            newElement.classList.add('p-4', 'bg-purple', 'text-start')
+        postbox.appendChild(newElement)
+        });
+    //     
     
-    // </div>`
-        newElement.innerHTML = newElementHtml
-        newElement.classList.add('p-4', 'bg-purple', 'text-start')
-    postbox.appendChild(newElement)
-    });
-//     
+    
+        return ipData
+        
+    } catch (error) {
+        console.error('error:', error)
+    }
 
-
-    return ipData
+   
 }
 
 

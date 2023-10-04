@@ -19,10 +19,7 @@ const ipAddress = () => {
 
 // Get Started, get Geo Location
 const getLocation =  async () => {
-    if (!ip) {
-        console.log('no IP available')
-        return
-    }
+    
 
     
     locationURL = `https://ipapi.co/${ip}/json/`
