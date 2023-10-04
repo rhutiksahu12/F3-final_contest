@@ -43,7 +43,7 @@ async function getDetails() {
     // List of the Post Offices
 
     try {
-        const post = await fetch(`https://api.postalpincode.in/pincode/440024`)
+        const post = await fetch(`https://api.postalpincode.in/pincode/${ipData.postal}`)
         const list = await post.json()
         console.log(list[0].PostOffice)
         message.innerText = list[0].Message
