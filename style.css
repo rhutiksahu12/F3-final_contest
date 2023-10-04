@@ -1,0 +1,25 @@
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+#ip-address{
+    background-color: #575A85;
+}
+
+#bg-purple{
+    background-color: #575A85 !important;
+}
+
+.title{
+    color: #575A85 !important;
+}
+.ipDetails{
+    color: white;
+}
+
+#post-details{
+    color:white
+}
