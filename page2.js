@@ -25,7 +25,7 @@ async function getDetails() {
     long.innerText = ipData.longitude
     city.innerText = ipData.city
     region.innerText = ipData.region
-    organisation.innerText = ipData.organisation
+    organisation.innerText = ipData.org
     ip.innerText = ipData.ip
     hostname.innerText = ipData.asn
     timezone.innerText = ipData.timezone
